@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MoneyAI — Opportunity Engine</title>
+<meta name="description" content="MoneyAI helps discover, score, test, and scale legal online business opportunities with strict budget controls." />
+<style>
+:root{--bg:#0a0a0b;--panel:#121216;--panel2:#17171d;--text:#f5f5f7;--muted:#9b9ba6;--line:#292933;--ok:#4ade80;--warn:#facc15;--bad:#fb7185;--accent:#8b5cf6;--accent2:#22d3ee}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top left,#151022 0,#0a0a0b 35%),var(--bg);color:var(--text)}
+button,input,select{font:inherit}.shell{display:grid;grid-template-columns:260px 1fr;min-height:100vh}.side{border-right:1px solid var(--line);padding:24px 18px;position:sticky;top:0;height:100vh;background:rgba(10,10,11,.86);backdrop-filter:blur(16px)}
+.brand{font-size:22px;font-weight:800;letter-spacing:-.03em;margin-bottom:8px}.brand b{color:var(--accent2)}.tag{font-size:12px;color:var(--muted);margin-bottom:28px}.nav button{display:block;width:100%;text-align:left;background:transparent;color:var(--muted);border:0;padding:12px 14px;border-radius:10px;margin:4px 0;cursor:pointer}.nav button.active,.nav button:hover{background:#1a1a21;color:white}.budget{margin-top:28px;border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--panel)}
+.main{padding:28px;max-width:1400px;width:100%}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:24px}.top h1{margin:0;font-size:30px;letter-spacing:-.04em}.top p{margin:6px 0 0;color:var(--muted)}.pill{font-size:12px;border:1px solid #285e3b;background:#102318;color:#86efac;padding:8px 11px;border-radius:999px;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:linear-gradient(180deg,var(--panel),#0f0f13);border:1px solid var(--line);border-radius:16px;padding:18px}.metric .label{color:var(--muted);font-size:12px}.metric .value{font-size:28px;font-weight:800;margin-top:8px}.metric .delta{font-size:12px;color:var(--muted);margin-top:5px}.section{margin-top:22px}.section h2{font-size:18px;margin:0 0 12px}.split{display:grid;grid-template-columns:1.7fr 1fr;gap:16px}
+.bar{height:8px;background:#202028;border-radius:999px;overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0}.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);font-size:13px}.table th{color:var(--muted);font-weight:600}.score{font-weight:800}.score.good{color:var(--ok)}.score.mid{color:var(--warn)}.score.bad{color:var(--bad)}
+.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#1b1b22;color:white;border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:700}.btn.primary{background:linear-gradient(90deg,var(--accent),#6d28d9);border-color:#6d28d9}.btn:hover{filter:brightness(1.08)}.note{font-size:12px;color:var(--muted);line-height:1.5}.status{font-size:11px;padding:5px 8px;border-radius:999px;border:1px solid var(--line)}.status.test{color:#fcd34d;background:#2a210d}.status.scale{color:#86efac;background:#0d2818}.status.kill{color:#fda4af;background:#2a1116}
+.form{display:grid;grid-template-columns:1.2fr 1fr .8fr auto;gap:10px}.form input,.form select{background:#0e0e12;color:white;border:1px solid var(--line);border-radius:10px;padding:10px}.hidden{display:none}.empty{padding:24px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}.launchbox{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.launchbox .mini{background:#0d0d11;border:1px solid var(--line);border-radius:12px;padding:12px}.mini b{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}.progress{height:10px;background:#1f1f25;border-radius:999px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent2),var(--ok))}.price{font-size:36px;font-weight:900}.muted{color:var(--muted)}.foot{margin:28px 0 6px;color:var(--muted);font-size:12px;line-height:1.6}
+@media(max-width:1000px){.shell{grid-template-columns:1fr}.side{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}.nav{display:flex;overflow:auto}.nav button{width:auto;white-space:nowrap}.grid{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}.form{grid-template-columns:1fr 1fr}.main{padding:20px}}@media(max-width:640px){.grid{grid-template-columns:1fr}.form,.launchbox{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+  <div class="brand">Money<b>AI</b></div>
+  <div class="tag">Legal opportunity engine</div>
+  <div class="nav">
+    <button class="active" data-view="dashboard">Dashboard</button>
+    <button data-view="opportunities">Opportunity Engine</button>
+    <button data-view="launch">Launch Lab</button>
+    <button data-view="portfolio">Portfolio</button>
+    <button data-view="pricing">Pricing</button>
+  </div>
+  <div class="budget"><div class="note">Validation budget</div><div style="font-size:28px;font-weight:800;margin-top:4px">$100.00</div><div class="bar"><i id="budgetBar"></i></div><div class="note" style="margin-top:8px"><span id="spentText">$0.00</span> spent · <span id="remainText">$100.00</span> remaining</div></div>
+</aside>
+<main class="main">
+<section id="dashboard" class="view">
+  <div class="top"><div><h1>Command Center</h1><p>Find demand, test cheaply, kill losers, scale winners.</p></div><div class="pill">Budget protected</div></div>
+  <div class="grid">
+    <div class="card metric"><div class="label">Cash remaining</div><div class="value" id="mCash">$100.00</div><div class="delta">Hard cap enabled</div></div>
+    <div class="card metric"><div class="label">Revenue</div><div class="value" id="mRevenue">$0.00</div><div class="delta">Verified only</div></div>
+    <div class="card metric"><div class="label">Profit</div><div class="value" id="mProfit">$0.00</div><div class="delta">Revenue − spend</div></div>
+    <div class="card metric"><div class="label">Active experiments</div><div class="value" id="mActive">0</div><div class="delta">Stop-loss monitored</div></div>
+  </div>
+  <div class="section split">
+    <div class="card"><h2>Top opportunities</h2><div class="table-wrap"><table class="table"><thead><tr><th>Opportunity</th><th>Model</th><th>Score</th><th>Status</th></tr></thead><tbody id="topOpps"></tbody></table></div></div>
+    <div class="card"><h2>Survival rules</h2><div class="note">MoneyAI does not promise profit. Every experiment has a budget cap, success metric and kill rule.</div><div style="margin-top:14px" class="launchbox"><div class="mini"><b>Max first test</b>$15</div><div class="mini"><b>Default test window</b>7 days</div><div class="mini"><b>Minimum signal</b>1 paid sale</div><div class="mini"><b>Scale condition</b>Positive unit economics</div></div></div>
+  </div>
+</section>
+<section id="opportunities" class="view hidden">
+  <div class="top"><div><h1>Opportunity Engine</h1><p>Score legal business ideas before spending money.</p></div></div>
+  <div class="card"><div class="form"><input id="oppName" placeholder="Opportunity name"/><select id="oppModel"><option>SaaS</option><option>Digital product</option><option>Lead generation</option><option>Affiliate</option><option>API</option><option>Service</option></select><input id="oppPrice" type="number" min="1" placeholder="Price $"/><button class="btn primary" id="addOpp">Score idea</button></div></div>
+  <div class="section card"><div class="table-wrap"><table class="table"><thead><tr><th>Opportunity</th><th>Model</th><th>Price</th><th>Demand</th><th>Margin</th><th>Automation</th><th>Risk</th><th>Score</th></tr></thead><tbody id="oppTable"></tbody></table></div></div>
+</section>
+<section id="launch" class="view hidden">
+  <div class="top"><div><h1>Launch Lab</h1><p>Turn the best idea into a controlled experiment.</p></div></div>
+  <div class="card"><h2 id="launchTitle">Select an opportunity</h2><div id="launchDetails" class="empty">Go to Opportunity Engine and add or select an idea.</div><div class="actions" style="margin-top:14px"><button class="btn primary" id="startTest">Start $10 test</button><button class="btn" id="simulateSale">Record $15 sale</button><button class="btn" id="killTest">Kill test</button></div></div>
+</section>
+<section id="portfolio" class="view hidden">
+  <div class="top"><div><h1>Portfolio</h1><p>Track every experiment as an asset—not a pet project.</p></div></div>
+  <div class="card"><div id="portfolioList" class="empty">No experiments yet.</div></div>
+</section>
+<section id="pricing" class="view hidden">
+  <div class="top"><div><h1>MoneyAI Pro</h1><p>Charge for the system itself while it helps users test business ideas.</p></div></div>
+  <div class="split">
+    <div class="card"><div class="muted">Pro plan</div><div class="price">$19<span style="font-size:16px;font-weight:600">/month</span></div><p class="muted">Unlimited opportunity scoring, experiment tracking, portfolio rules, and launch plans.</p><div class="actions"><button class="btn primary" id="checkoutBtn">Start Pro</button></div><p class="note" style="margin-top:12px">Stripe Checkout will be connected before paid launch. No card data is stored by MoneyAI.</p></div>
+    <div class="card"><h2>What customers buy</h2><div class="launchbox"><div class="mini"><b>Opportunity scoring</b>Compare ideas before wasting money.</div><div class="mini"><b>Budget guardrails</b>Stop-loss rules protect cash.</div><div class="mini"><b>Launch kits</b>Offer, audience, price and test plan.</div><div class="mini"><b>Portfolio logic</b>Scale winners, kill losers.</div></div></div>
+  </div>
+</section>
+<div class="foot">MoneyAI is a business decision-support tool. It does not guarantee profit and does not automate prohibited activity. No spam, fraud, fake reviews, impersonation, unauthorized access, gambling, deceptive advertising, prohibited products, or copyright infringement.</div>
+</main></div>
+<script>
+const state={budget:100,spent:0,revenue:0,selected:null,opps:[
+ {name:'Resume Tailoring Micro-SaaS',model:'SaaS',price:19,demand:86,margin:94,auto:92,risk:12,score:88},
+ {name:'PDF-to-Spreadsheet Cleaner',model:'SaaS',price:12,demand:82,margin:91,auto:89,risk:10,score:85},
+ {name:'Local Quote Comparison Leads',model:'Lead generation',price:25,demand:79,margin:88,auto:73,risk:24,score:78}
+],experiments:[]};
+function money(v){return '$'+v.toFixed(2)}
+function calcScore(o){return Math.max(0,Math.min(100,Math.round((o.demand*.3)+(o.margin*.25)+(o.auto*.25)+((100-o.risk)*.2))))}
+function render(){document.querySelector('#budgetBar').style.width=(state.spent/state.budget*100)+'%';document.querySelector('#spentText').textContent=money(state.spent);document.querySelector('#remainText').textContent=money(state.budget-state.spent);document.querySelector('#mCash').textContent=money(state.budget-state.spent);document.querySelector('#mRevenue').textContent=money(state.revenue);document.querySelector('#mProfit').textContent=money(state.revenue-state.spent);document.querySelector('#mActive').textContent=state.experiments.filter(x=>x.status==='TEST').length;
+ const sorted=[...state.opps].sort((a,b)=>b.score-a.score);document.querySelector('#topOpps').innerHTML=sorted.slice(0,5).map(o=>`<tr><td>${o.name}</td><td>${o.model}</td><td class="score ${o.score>82?'good':o.score>70?'mid':'bad'}">${o.score}</td><td><span class="status ${o.score>82?'scale':'test'}">${o.score>82?'READY':'WATCH'}</span></td></tr>`).join('');
+ document.querySelector('#oppTable').innerHTML=sorted.map((o,i)=>`<tr data-i="${state.opps.indexOf(o)}" class="oppRow" style="cursor:pointer"><td>${o.name}</td><td>${o.model}</td><td>${money(o.price)}</td><td>${o.demand}</td><td>${o.margin}</td><td>${o.auto}</td><td>${o.risk}</td><td class="score ${o.score>82?'good':o.score>70?'mid':'bad'}">${o.score}</td></tr>`).join('');
+ document.querySelectorAll('.oppRow').forEach(r=>r.onclick=()=>{state.selected=Number(r.dataset.i);show('launch');renderLaunch()});
+ const p=document.querySelector('#portfolioList');if(!state.experiments.length){p.className='empty';p.textContent='No experiments yet.'}else{p.className='';p.innerHTML=`<div class="table-wrap"><table class="table"><thead><tr><th>Experiment</th><th>Spend</th><th>Revenue</th><th>Profit</th><th>Status</th></tr></thead><tbody>${state.experiments.map(e=>`<tr><td>${e.name}</td><td>${money(e.spend)}</td><td>${money(e.revenue)}</td><td>${money(e.revenue-e.spend)}</td><td><span class="status ${e.status==='SCALE'?'scale':e.status==='KILL'?'kill':'test'}">${e.status}</span></td></tr>`).join('')}</tbody></table></div>`}}
+function renderLaunch(){const box=document.querySelector('#launchDetails'),title=document.querySelector('#launchTitle');if(state.selected==null){title.textContent='Select an opportunity';box.className='empty';box.textContent='Go to Opportunity Engine and add or select an idea.';return}const o=state.opps[state.selected];title.textContent=o.name;box.className='launchbox';box.innerHTML=`<div class="mini"><b>Offer</b>${o.model} solving one narrow paid problem</div><div class="mini"><b>Target buyer</b>People already paying for alternatives</div><div class="mini"><b>Price test</b>${money(o.price)}</div><div class="mini"><b>Acquisition</b>Direct outreach + communities + intent search</div><div class="mini"><b>Budget cap</b>$10 initial</div><div class="mini"><b>Success metric</b>1 paid customer before $10 is exhausted</div><div class="mini"><b>Kill rule</b>No qualified interest after 30 targeted visits</div><div class="mini"><b>Scale rule</b>Gross profit > acquisition cost</div>`}
+function show(id){document.querySelectorAll('.view').forEach(v=>v.classList.add('hidden'));document.querySelector('#'+id).classList.remove('hidden');document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));if(id==='launch')renderLaunch()}
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>show(b.dataset.view));
+document.querySelector('#addOpp').onclick=()=>{const name=document.querySelector('#oppName').value.trim();if(!name)return alert('Enter an opportunity name.');const model=document.querySelector('#oppModel').value;const price=Math.max(1,Number(document.querySelector('#oppPrice').value)||10);const seed=[...name].reduce((a,c)=>a+c.charCodeAt(0),0);const o={name,model,price,demand:60+(seed%35),margin:68+(seed%30),auto:55+((seed*3)%40),risk:8+((seed*7)%28)};o.score=calcScore(o);state.opps.push(o);state.selected=state.opps.length-1;render();show('launch');renderLaunch()};
+document.querySelector('#startTest').onclick=()=>{if(state.selected==null)return alert('Select an opportunity first.');if(state.budget-state.spent<10)return alert('Budget guardrail blocked this test.');const o=state.opps[state.selected];state.spent+=10;state.experiments.push({name:o.name,spend:10,revenue:0,status:'TEST'});render();alert('Experiment started with a $10 cap.')};
+document.querySelector('#simulateSale').onclick=()=>{let e=state.experiments.find(x=>x.status==='TEST');if(!e)return alert('Start a test first.');e.revenue+=15;state.revenue+=15;e.status=(e.revenue-e.spend)>0?'SCALE':'TEST';render();alert('Sale recorded. Portfolio decision updated.')};
+document.querySelector('#killTest').onclick=()=>{let e=state.experiments.find(x=>x.status==='TEST');if(!e)return alert('No active test.');e.status='KILL';render()};
+document.querySelector('#checkoutBtn').onclick=()=>alert('Stripe Checkout is the next connection step. The site is in validation mode and will not collect payment until Stripe is wired.');
+render();
+</script>
+</body></html>
